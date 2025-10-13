@@ -13,7 +13,6 @@
             <p>I like to spend my weekends in the mountains whenever possible. <a href="https://www.peakbagger.com/climber/ClimbListC.aspx?cid=40468">My Peakbagger Ascent List</a>
             <h2 class="my-4">Summit Map</h2>
             <iframe src="https://caltopo.com/m/J010SRG" class="w-full h-[75vh]" title="Summits Map"></iframe>
-            <!-- <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?center=Montana&key=AIzaSyDOOr9trrfMnIwfPZyY3xaljtMvlqQP1LY"></iframe> -->
         </section>
     </main>
 

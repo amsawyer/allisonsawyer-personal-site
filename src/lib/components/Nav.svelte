@@ -24,6 +24,7 @@
             <ModeToggle />
 		</div>
 
+        <!-- TODO make this look better on mobile -->
 		<!-- Mobile menu button -->
 		<button class="md:hidden text-neutral-700" on:click={() => (isOpen = !isOpen)}>
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

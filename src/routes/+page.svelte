@@ -20,7 +20,6 @@
             <div class="flex flex-col sm:flex-row items-center sm:items-start gap-30">
                 <!-- Headshot -->
                 <img src={headshot} class="w-40 h-40 object-cover rounded-full" alt="Profile picture" />
-                <!-- TODO light/dark mode switch -->
 
                 <!-- Intro text -->
                 <div class="text-center sm:text-left">
