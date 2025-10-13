@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     /* PRIMARY NAVY BLUE SCALE - Conveys trust, professionalism, cybersecurity */
     --color-primary-50: #f3f6fa;
@@ -7,7 +9,7 @@
     --color-primary-200: #b8c9e0;
     --color-primary-300: #90a9ce;
     --color-primary-400: #6c8cc1;
-    --color-primary-500: #476ea8;  /* Main brand color */
+    --color-primary-500: #476ea8;
     --color-primary-600: #355891;
     --color-primary-700: #2a4676;
     --color-primary-800: #20365e;
@@ -32,7 +34,7 @@
     --color-accent-100: #cffafe;
     --color-accent-200: #a5f3fc;
     --color-accent-300: #67e8f9;
-    --color-accent-400: #22d3ee;
+    --color-accent-400: #22d3ee;  /* color for CalTopo map waypoints */
     --color-accent-500: #06b6d4;
     --color-accent-600: #0891b2;
     --color-accent-700: #0e7490;
@@ -41,17 +43,18 @@
     --color-accent-950: #083344;
 
     /* NEUTRAL COOL GRAY SCALE - For text, base background */
-    /*--color-neutral-50: #f9fafb;*/
-    --color-neutral-50: #fdfaf5;
+    --color-neutral-25: #f9fafb;
+    --color-neutral-50: #fdfaf5;  /* light mode background color */
     --color-neutral-100: #f3f4f6;
     --color-neutral-200: #e5e7eb;
-    --color-neutral-300: #d1d5db;
+    --color-neutral-300: #d1d5db;  /* dark mode default color for body text */
     --color-neutral-400: #9ca3af;
     --color-neutral-500: #6b7280;
     --color-neutral-600: #4b5563;
-    --color-neutral-700: #374151;
-    --color-neutral-800: #1f2937;
-    --color-neutral-900: #111827;
+    --color-neutral-700: #374151;  /* light mode default color for body text */
+    --color-neutral-750: #2c3341;
+    --color-neutral-800: #1b212f;
+    --color-neutral-900: #111827;  /* dark mode background color */
     --color-neutral-950: #030712;
 
     /* DANGER RED SCALE - Used minimally (e.g., form validation errors) */
@@ -72,8 +75,8 @@
     --font-mono: 'Fira Code', ui-monospace, 'Courier New', monospace;
 
     /* SPACING - Balanced for breathing room */
-    --spacing-section: 5rem;
-    --spacing-component: 2rem;
+    --spacing-section: 4rem;
+    --spacing-component: 1rem;
     --spacing-element: 1rem;
 
     /* BORDER RADIUS - Clean, modern sharpness */
@@ -93,47 +96,35 @@
     }
 
     body {
-        @apply text-neutral-800 bg-neutral-50 font-sans antialiased;
+        @apply text-neutral-700 bg-neutral-50 dark:text-neutral-300 dark:bg-neutral-900 font-sans antialiased;
     }
 
     h1 {
-        @apply text-4xl font-semibold text-primary-700;
+        @apply text-primary-800 dark:text-primary-300 text-5xl font-semibold;
     }
 
     h2 {
-        @apply text-2xl font-medium text-primary-700;
+        @apply text-primary-800 dark:text-primary-300 text-2xl font-medium;
     }
 
     h3 {
-        @apply text-xl font-medium text-primary-600;
-    }
-
-    h4 {
-        @apply text-lg font-semibold text-neutral-700;
-    }
-
-    h5 {
-        @apply text-base font-semibold text-neutral-600;
+        @apply text-primary-700 dark:text-primary-400 text-xl font-semibold mb-2;
     }
 
     p {
-        @apply text-base text-neutral-700 leading-relaxed;
+        @apply text-base leading-relaxed;
+    }
+
+    .card {
+        @apply bg-neutral-100 dark:bg-neutral-800 rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden;
     }
 
     a {
-        @apply text-primary-600 underline underline-offset-2;
+        @apply text-primary-500;
     }
 
     a:hover {
-        @apply text-primary-800;
-    }
-
-    button,
-    input,
-    textarea,
-    select,
-    a {
-        @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+        @apply text-accent-600;
     }
 
     code {
@@ -146,5 +137,41 @@
 
     pre code {
         @apply text-sm;
+    }
+
+    ul {
+        @apply list-disc list-outside ms-4 mt-2 space-y-1;
+    }
+
+    ol {
+        @apply list-decimal list-outside ms-4 mt-2 space-y-1;
+    }
+
+    .navbar {
+        @apply bg-primary-200 dark:bg-neutral-750 w-full shadow-sm;
+    }
+
+    .navbartitletext {
+        @apply text-primary-700 hover:text-accent-600 dark:text-neutral-400 transition-colors font-semibold text-lg;
+    }
+
+    .navbartext {
+        @apply text-neutral-700 hover:text-accent-600 dark:text-neutral-400 transition-colors;
+    }
+
+    .footer {
+        @apply bg-primary-200 dark:bg-neutral-750 py-6;
+    }
+
+    .footertext {
+        @apply text-neutral-700 dark:text-neutral-400 max-w-7xl mx-auto flex flex-col items-center px-4;
+    }
+
+    .toggledarkmode {
+        @apply relative w-12 h-6 flex items-center rounded-full transition-colors duration-300 bg-neutral-300 dark:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary-500;
+    }
+
+    .togglelightmode {
+        @apply absolute flex items-center justify-center w-5 h-5 rounded-full text-sm bg-white dark:bg-neutral-800 shadow-md transition-transform duration-300;
     }
 }
