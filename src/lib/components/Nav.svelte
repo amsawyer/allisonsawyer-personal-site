@@ -21,12 +21,12 @@
 				</a>
 			{/each}
 
+            <!-- dark/light mode toggle -->
             <ModeToggle />
 		</div>
 
-        <!-- TODO make this look better on mobile -->
 		<!-- Mobile menu button -->
-		<button class="md:hidden text-neutral-700" on:click={() => (isOpen = !isOpen)}>
+		<button class="mobilemenubutton" on:click={() => (isOpen = !isOpen)}>
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
 				stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
 				<path stroke-linecap="round" stroke-linejoin="round"
@@ -37,12 +37,17 @@
 
 	<!-- Mobile dropdown -->
 	{#if isOpen}
-		<div class="md:hidden bg-neutral-50 border-t border-neutral-200">
+		<div class="mobilemenu">
 			{#each links as link}
-				<a href={link.href} class="block px-4 py-2 text-neutral-700 hover:bg-neutral-100">
+				<a href={link.href} class="mobilemenulink">
 					{link.name}
 				</a>
 			{/each}
+
+		    <!-- dark/light mode toggle -->
+            <div class="block w-full px-4 py-2 flex flex-col items-end text-right">
+                <ModeToggle />
+            </div>
 		</div>
 	{/if}
 </nav>

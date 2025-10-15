@@ -16,8 +16,8 @@
     <Nav />
 
     <main class="flex-grow">
-        <section class="max-w-5xl mx-auto text-center py-[var(--spacing-section)] px-4">
-            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-30">
+        <section class="max-w-5xl mx-auto text-center px-6 py-[var(--spacing-section)]">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start sm:gap-20 gap-6">
                 <!-- Headshot -->
                 <img src={headshot} class="w-40 h-40 object-cover rounded-full" alt="Profile picture" />
 
@@ -25,7 +25,7 @@
                 <div class="text-center sm:text-left">
                     <h1 class="my-4">Allison Sawyer</h1>
                     <h2 class="mb-4">Cybersecurity Engineer, CISSP, GCFA, GCFE</h2>
-                    <div class="flex gap-8">
+                    <div class="flex justify-center sm:justify-start gap-8">
                       self [at] allisonsawyer [dot] com
                       {#each links as link}
                         <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
@@ -41,7 +41,7 @@
             </p>
         </section>
 
-        <section class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 py-[var(--spacing-component)]">
+        <section class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 py-[var(--spacing-component)]">
             <Card title="My Work"
                 description="I currently work as a **Principal Customer Success Engineer** at **Palo Alto Networks**, where I help our clients save time and reduce manual workload by leveraging our Cortex solutions." />
             <Card title="My Interests"
